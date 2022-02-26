@@ -1,0 +1,59 @@
+:root {
+  cursor: url("../imgs/cursor.png"), auto;
+}
+h1 {
+  position: relative;
+}
+h1::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  margin-top: 5px;
+  left: 50%;
+  width: 0;
+  height: 5px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: width 0.5s, opacity 0.5s;
+}
+h1:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+p {
+  transition: background-color 0.5s;
+}
+p:hover {
+  background-color: #dddddd !important;
+}
+span {
+  transition: color 0.5s;
+}
+span:hover {
+  color: #dd0000;
+}
+@keyframes eight {
+  12.5% {
+    transform: translate(50px, 50px);
+  }
+  25% {
+    transform: translate(0, 100px);
+  }
+  37.5% {
+    transform: translate(-50px, 50px);
+  }
+  62.5% {
+    transform: translate(50px, -50px);
+  }
+  75% {
+    transform: translate(0, -100px);
+  }
+  87.5% {
+    transform: translate(-50px, -50px);
+  }
+}
+img {
+  animation: eight 5s linear infinite;
+}
